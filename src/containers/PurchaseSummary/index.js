@@ -13,24 +13,12 @@ class PurchaseSummary extends React.Component {
         <Row />
         <Row />
         <hr/>
-        <ExpandableInformation />
-        <ExpandableInformation />
+        <ExpandableItem />
+        <ExpandableItem />
       </div>
     );
   }
 }
-
-function mapStateToProps(state, ownProps) {
-  return {
-    prices: state.prices,
-    product: state.product
-  };
-}
-
-const PurchaseSummaryContainer = connect(
-  mapStateToProps,
-  { applyDiscount }
-)(PurchaseSummary);
 
 export default PurchaseSummaryContainer;
 
