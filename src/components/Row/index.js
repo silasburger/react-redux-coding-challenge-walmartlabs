@@ -8,23 +8,11 @@ export default class Row extends PureComponent {
   }
 
   render() {
-    let style;
-    if (this.props.discount === true) {
-      style = {
-        fontWeight: 'bold',
-        color: 'red'
-      };
-    } else {
-      style = {
-        fontWeight: 'bold',
-        color: 'black'
-      };
-    }
     return (
       <div className="row">
-        <div className="title">{this.props.title}</div>
-        <div style={style} className="figure">
-          {this.props.discount ? '-' : ''}
+        {this.props.infoTip ? this.props.infoTip : <div className="title">{this.props.title}{this.props.children}</div>}
+        <div style={this.props.less === true ? {color:'red'} : {color: 'black'}} className="figure">
+          {this.props.less ? '-' : ''}
           ${this.props.figure}
         </div>
       </div>

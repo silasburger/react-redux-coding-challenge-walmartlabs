@@ -21,10 +21,15 @@ class PurchaseSummary extends Component {
         <Row
           title="Pickup savings"
           figure={this.props.pricing.savings}
-          discount={true}
+          less={true}
         />
+      {this.props.discount > 0 ? <Row
+          title="Discount"
+          figure={this.props.pricing.discount}
+          less={true}
+        /> : null}
         <Row title="Est. taxes and fees" figure={this.props.pricing.tax}>
-          <div>(Based on {this.props.pricing.zip}</div>
+          <div>(Based on {this.props.pricing.zip})</div>
         </Row>
         <hr />
         <Row title="Est. total" figure={this.props.pricing.total} />
