@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Row from '../../components/Row';
 import ExpandableItem from '../../components/ExpandableItem';
 import { applyDiscount } from '../actions/actionCreators';
 
-class PurchaseSummary extends React.Component {
+class PurchaseSummary extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <div className="purchase-summary">
@@ -20,6 +28,11 @@ class PurchaseSummary extends React.Component {
   }
 }
 
-export default PurchaseSummaryContainer;
+function mapStateToProps(state, ownProps) {
+  return {
+    prices: state.prices,
+    product: state.product
+  };
+}
 
-export { PurchaseSummary };
+export default connect(  mapStateToProps, { applyDiscount })(PurchaseSummary);
