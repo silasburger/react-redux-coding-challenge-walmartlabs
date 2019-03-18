@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import purchaseReducer from "./containers/PurchaseSummary/reducers/purchaseReducer";
-import priceReducer from "./containers/PurchaseSummary/reducers/priceReducer";
+import itemReducer from "./containers/PurchaseSummary/reducers/itemReducer";
+import pricingReducer from "./containers/PurchaseSummary/reducers/pricingReducer";
 
 export default combineReducers({
-  prices: priceReducer,
-  product: purchaseReducer
+  pricing: pricingReducer,
+  item: itemReducer
 });

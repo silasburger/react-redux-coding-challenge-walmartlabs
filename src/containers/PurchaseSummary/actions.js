@@ -1,30 +1,29 @@
 import { getPurchaseData } from './mocks/purchaseDataMock';
 import {
-  RECEIVED_PURCHASE_DATA,
-  FETCH_PURCHASE_DATA_FAILED,
-  LOADING_PURCHASE_DATA,
+  RECEIVED_PRICING_DATA,
+  RECEIVED_ITEM_DATA,
   APPLY_DISCOUNT
 } from './constants';
 
 export function fetchPurchaseData() {
   return function(dispatch) {
-    dispatch(LOADING_PURCHASE_DATA);
     getPurchaseData()
-      .then(response => dispatch(recievedPurchaseData(response)))
-      .catch(err => dispatch(fetchPurchaseDataFailed(err)));
+      .then(response => {
+        dispatch(recievedPricingData(response.pricing));
+        dispatch(recievedItemData(response.itemDetails))
+      })
+      .catch(err => {
+        console.error(err);
+      });
   };
 }
 
-export function recievedPurchaseData(data) {
-  return { type: RECEIVED_PURCHASE_DATA, data };
+export function recievedPricingData(data) {
+  return { type: RECEIVED_PRICING_DATA, data };
 }
 
-export function fetchPurchaseDataFailed(err) {
-  return { type: FETCH_PURCHASE_DATA_FAILED, err };
-}
-
-export function loadingPurchaseData() {
-  return { type: LOADING_PURCHASE_DATA };
+export function recievedItemData(data) {
+  return { type: RECEIVED_ITEM_DATA, data };
 }
 
 export function applyDiscount(discountCode) {

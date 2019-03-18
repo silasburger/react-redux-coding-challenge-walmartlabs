@@ -2,15 +2,19 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Row from '../../components/Row';
 import ExpandableItem from '../../components/ExpandableItem';
-import { applyDiscount } from './actions';
+import { applyDiscount, fetchPurchaseData } from './actions';
 
 class PurchaseSummary extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    try {
+      await this.props.fetchPurchaseData();
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   render() {
@@ -30,9 +34,9 @@ class PurchaseSummary extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    prices: state.prices,
-    product: state.product
+    pricing: state.pricing,
+    item: state.item
   };
 }
 
-export default connect(  mapStateToProps, { applyDiscount })(PurchaseSummary);
+export default connect(  mapStateToProps, { applyDiscount, fetchPurchaseData })(PurchaseSummary);
