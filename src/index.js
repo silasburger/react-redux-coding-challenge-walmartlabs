@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+import PurchaseSummaryContainer from './containers/PurchaseSummary';
 import * as serviceWorker from './serviceWorker';
+
+class App extends Component {
+  render() {
+    return (
+      <Provider>
+        <PurchaseSummaryContainer />
+      </Provider>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
