@@ -10,9 +10,9 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './rootReducer';
 
 const store = createStore(
-  rootReducer, composeWithDevTools(
-    applyMiddleware(thunk),
-));
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 class App extends Component {
   render() {
