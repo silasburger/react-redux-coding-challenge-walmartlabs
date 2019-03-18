@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Row from '../../components/Row';
 import ExpandableItem from '../../components/ExpandableItem';
-import { applyDiscount } from '../actions/actionCreators';
+import { applyDiscount } from './actions';
 
 class PurchaseSummary extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class PurchaseSummary extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {

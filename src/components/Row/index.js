@@ -7,7 +7,7 @@ export default class Row extends Component {
   }
 
   render() {
-    return <div>hi</div>;
+    return <div>row</div>;
   }
 }
 
