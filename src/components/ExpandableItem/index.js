@@ -1,12 +1,30 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './style.css';
 
-export default class ExpandableItem extends Component {
+export default class ExpandableItem extends PureComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      expanded: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.setState(st => ({
+      expanded: !st.expanded
+    }));
   }
 
   render() {
-    return <div>ExpandableItem</div>;
+    let expandComponent = this.state.expanded ? this.props.children : null;
+    return (
+      <div className="expandable-information">
+        <button className="expandable-button" onClick={this.handleClick}>
+        {this.state.expanded ? this.props.closePrefix : this.props.openPrefix} {this.props.title}{this.state.expanded ? '-' : '+'}
+        </button>
+        {expandComponent}
+      </div>
+    );
   }
 }

@@ -1,0 +1,14 @@
+.expandable-button {
+    background:none;
+    color:inherit;
+    border:none; 
+    padding:0;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.expandable-button:focus {
+  outline-color: black;
+  outline-width: 1px;
+}
