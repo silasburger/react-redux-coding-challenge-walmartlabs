@@ -11,7 +11,7 @@ $ npm start
 ```
 
 ### Running tests: 
-I tested interactions with the ExpandableItem and DiscountForm components.
+I tested interactions for the ExpandableItem and DiscountForm components.
 
 1. Run `npm test`
 ```bash
