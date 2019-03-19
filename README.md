@@ -1,3 +1,26 @@
+### Hello! To get started please follow these steps:
+
+1. Install the dependencies:
+```bash
+$ npm install
+```
+
+2. Run `npm start`:
+```bash
+$ npm start
+```
+
+### Running tests: 
+
+1. Run `npm test`
+```bash
+$ npm test
+```
+
+
+***********
+Create-React-App startup instructions
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
