@@ -22,16 +22,22 @@ export default class discountForm extends PureComponent {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="promoCode">Promo</label>
-        <input
-          type="text"
-          id="promoCode"
-          name="promoCode"
-          onChange={this.handleChange}
-          value={this.state.promoCode}
-        />
-        <button>Apply</button>
+      <form className="discount-form" onSubmit={this.handleSubmit}>
+        <div>
+          <label htmlFor="promoCode" className="promoCode-label">
+            Promo
+          </label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="promoCode"
+            name="promoCode"
+            onChange={this.handleChange}
+            value={this.state.promoCode}
+          />
+          <button className="apply-button">Apply</button>
+        </div>
       </form>
     );
   }

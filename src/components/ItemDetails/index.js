@@ -2,12 +2,7 @@ import React, { PureComponent } from 'react';
 import './style.css';
 
 export default class ItemDetails extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    console.log(this.props);
     return <div className="item-details">
     <img className="item-picture" src={this.props.pictureURL} alt={this.props.itemName}/>
     <div className="item-name">{this.props.itemName}</div>

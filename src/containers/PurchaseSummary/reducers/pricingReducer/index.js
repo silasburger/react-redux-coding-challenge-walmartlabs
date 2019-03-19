@@ -7,9 +7,8 @@ export default function pricingReducer(state = initialState, action) {
     case RECEIVED_PRICING_DATA:
       return action.data;
     case APPLY_DISCOUNT:
-      console.log('in reducer');
       if(action.discountCode === 'DISCOUNT') {
-        const newDiscount = Math.trunc((state.subtotal * 0.10) * 10) / 10;
+        const newDiscount = Math.trunc((state.subtotal * 0.10) * 100) / 100;
         return {...state, discount: newDiscount, total: (state.subtotal - state.savings - newDiscount + state.tax)}
       }
       return state;

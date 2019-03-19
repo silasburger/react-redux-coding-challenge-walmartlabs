@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import './style.css';
 
 export default class ExpandableItem extends PureComponent {
   constructor(props) {
@@ -20,9 +20,11 @@ export default class ExpandableItem extends PureComponent {
     let expandComponent = this.state.expanded ? this.props.children : null;
     return (
       <div className="expandable-information">
-        <button className='ui-button' onClick={this.handleClick}>
-          {this.state.expanded ? this.props.closePrefix : this.props.openPrefix} {this.props.title}{this.state.expanded ? '-' : '+'}
-        </button>
+        <button className="ui-button" onClick={this.handleClick}>
+          {this.state.expanded ? this.props.closePrefix : this.props.openPrefix}{' '}
+          {this.props.title}
+          <span className="expand-sign">{this.state.expanded ? '-' : '+'}</span>
+        </button>{' '}
         {expandComponent}
       </div>
     );

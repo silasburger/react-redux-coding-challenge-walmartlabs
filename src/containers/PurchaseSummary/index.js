@@ -20,36 +20,39 @@ class PurchaseSummary extends Component {
   render() {
     return (
       <div className="purchase-summary">
-        <Row title="Subtotal" figure={this.props.pricing.subtotal} />
-        <Row
-          title="Pickup savings"
-          figure={this.props.pricing.savings}
-          less={true}
-          toolTip={
-            <ToolTip
-              title="Pickup savings"
-              desc="Picking up your order in the store helps cut costs, and we pass the savings on to you."
-            />
-          }
-        />
-        {this.props.pricing.discount > 0 ? (
+          <Row title="Subtotal" figure={this.props.pricing.subtotal} />
           <Row
-            title="Discount"
-            figure={this.props.pricing.discount}
+            title="Pickup savings"
+            figure={this.props.pricing.savings}
             less={true}
+            toolTip={
+              <ToolTip
+                title="Pickup savings"
+                desc="Picking up your order in the store helps cut costs, and we pass the savings on to you."
+              />
+            }
           />
-        ) : null}
-        <Row title="Est. taxes and fees" figure={this.props.pricing.tax}>
-          <div>(Based on {this.props.pricing.zip})</div>
-        </Row>
-        <hr />
-        <Row title="Est. total" figure={this.props.pricing.total} />
+          {this.props.pricing.discount > 0 ? (
+            <Row
+              title="Discount"
+              figure={this.props.pricing.discount}
+              less={true}
+            />
+          ) : null}
+          <Row title="Est. taxes and fees" figure={this.props.pricing.tax}>
+            <div>(Based on {this.props.pricing.zip})</div>
+          </Row>
+          <Row
+            total={true}
+            title="Est. total"
+            figure={this.props.pricing.total}
+          />
         <ExpandableItem
           openPrefix={'See'}
           closePrefix={'Hide'}
           title={'item details'}
         >
-          <ItemDetails {...this.props.item}/>
+          <ItemDetails {...this.props.item} />
         </ExpandableItem>
         <ExpandableItem
           openPrefix={'Apply'}
