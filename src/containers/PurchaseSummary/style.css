@@ -1,4 +1,9 @@
 .purchase-summary {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  float: right;
   width: 40%;
   border: solid 1px #ccc;
   padding: 20px;

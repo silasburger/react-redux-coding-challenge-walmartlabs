@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Row from '../../components/Row';
 import ExpandableItem from '../../components/ExpandableItem';
 import DiscountForm from '../../components/DiscountForm';
-import ProductDetails from '../../components/ProductDetails';
+import ItemDetails from '../../components/ItemDetails';
+import ToolTip from '../../components/ToolTip';
 import { applyDiscount, fetchPurchaseData } from './actions';
 import './style.css';
 
@@ -24,6 +25,12 @@ class PurchaseSummary extends Component {
           title="Pickup savings"
           figure={this.props.pricing.savings}
           less={true}
+          toolTip={
+            <ToolTip
+              title="Pickup savings"
+              desc="Picking up your order in the store helps cut costs, and we pass the savings on to you."
+            />
+          }
         />
         {this.props.pricing.discount > 0 ? (
           <Row
@@ -42,7 +49,7 @@ class PurchaseSummary extends Component {
           closePrefix={'Hide'}
           title={'item details'}
         >
-          <ProductDetails />
+          <ItemDetails {...this.props.item}/>
         </ExpandableItem>
         <ExpandableItem
           openPrefix={'Apply'}

@@ -10,7 +10,12 @@ const purchaseData = {
   },
   itemDetails: {
     itemName: 'OFM Essentials Racecar-Style Leather Gaming Chair, Green',
-    quantity: 1
+    pictureURL: 
+    "https://i5.walmartimages.com/asr/79916c35-3293-48ff-acff-be325b2e4c84_2.ef5b1bd1451de6b63a7c20d2485d56c6.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+    quantity: 1,
+    price: 99.11,
+    prevPrice: 102.96,
+
   }
 };
 
