@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import './style.css';
+import PropTypes from 'prop-types';
 
 export default class Row extends PureComponent {
   render() {
@@ -25,3 +26,12 @@ export default class Row extends PureComponent {
     );
   }
 }
+
+Row.propTypes = {
+  total: PropTypes.bool,
+  less: PropTypes.bool,
+  toolTip: PropTypes.element,
+  children: PropTypes.element,
+  figure: PropTypes.number,
+  title: PropTypes.string
+};

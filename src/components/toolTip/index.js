@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import './style.css';
+import PropTypes from 'prop-types';
 
 export default class ToolTip extends PureComponent {
   render() {
@@ -12,3 +13,8 @@ export default class ToolTip extends PureComponent {
     );
   }
 }
+
+ToolTip.propTypes = {
+  desc: PropTypes.string,
+  title: PropTypes.string
+};

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import './style.css';
+import PropTypes from 'prop-types';
 
-export default class discountForm extends PureComponent {
+export default class DiscountForm extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,4 +42,8 @@ export default class discountForm extends PureComponent {
       </form>
     );
   }
+}
+
+DiscountForm.propTypes = {
+  applyDiscount: PropTypes.func,
 }
