@@ -15,7 +15,6 @@ const purchaseData = {
     quantity: 1,
     price: 99.11,
     prevPrice: 102.96,
-
   }
 };
 

@@ -2,7 +2,13 @@ import {
   RECEIVED_ITEM_DATA,
 } from '../../constants';
 
-const initialState = {};
+const initialState = {
+  itemName: '',
+  pictureURL: '',
+  quantity: 0,
+  price: 0,
+  prevPrice: 0
+};
 
 export default function itemReducer(state = initialState, action) {
   switch (action.type) {

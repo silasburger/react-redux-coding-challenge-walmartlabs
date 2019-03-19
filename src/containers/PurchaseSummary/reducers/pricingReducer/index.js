@@ -1,6 +1,14 @@
 import { APPLY_DISCOUNT, RECEIVED_PRICING_DATA } from '../../constants';
 
-const initialState = {};
+const initialState = {
+  subtotal: 0,
+  previousPrice: 0,
+  savings: 0,
+  discount: 0,
+  tax: 0,
+  total: 0,
+  zip: 0,
+};
 
 export default function pricingReducer(state = initialState, action) {
   switch (action.type) {
